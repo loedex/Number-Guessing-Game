@@ -51,6 +51,7 @@ body,html{
     background: linear-gradient(to right, #f9ca24, #f6e58d);
     -webkit-background-clip : text;
     -webkit-text-fill-color : transparent;
+    background-clip: text;
     letter-spacing: 1px;
 }
 .subtitle{
