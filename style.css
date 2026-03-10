@@ -1,11 +1,158 @@
+:root{
+    --primary : #6ab04c;
+    --secondary : #badc58;
+    --dark : #22a6b3;
+    --danger : #eb4d4b;
+    --warning : #f9ca24;
+    --text-main : #2d3436;
+    --glass-bg : rgba(255,255,255,0.25);
+    --glass-border : rgba(255,255,255,0.4);
+}
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 body,html{
     height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #130f40, #30336b);
 }
-#a02{
-    letter-spacing: 1.5px;
+.main-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.glass-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+.glass-card:hover{
+    transform: translateY(-5px);
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #f9ca24, #f6e58d);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color : transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+.subtitle{
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.4;
+}
+.game-area{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.guess-input{
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
+    outline: none;
+    text-align: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+.guess-input:focus{
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+.action-btn{
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #6ab04c, #badc58);
+    color: #130f40;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.action-btn:hover{
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(106, 176, 76, 0.5);
+}
+.action-btn:active{
+    transform: scale(0.98);
+}
+.message-box{
+    padding: 15px;
+    border-radius: 12px;
+    background: red;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.message-box.hidden{
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+.msg-success {
+    background : rgba(106, 176, 76, 0.2);
+    border: 1px solid rgba(106, 176, 76, 0.5);
+    color: #badc58;
+}
+.msg-error{
+    background: rgba(235, 77, 75, 0.2);
+    border: 1px solid rgba(235, 77, 75, 0.5);
+    color: #ff7979;
+}
+.msg-warning{
+    background: rgba(249, 202, 36, 0.2);
+    border: 1px solid rgba(249, 202, 36, 0.5);
+    color: #f6e58d;
+}
+.stats{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+}
+
+
+@media(max-width:479px){
+    .glass-card{
+        padding: 30px 20px;
+    }
+    .title{
+        font-size: 2rem;
+    }
 }
