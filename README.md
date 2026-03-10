@@ -94,7 +94,7 @@ You just need a **web browser** — that's it! No installations required.
 
 1. **Clone the repository**
 ```bash
-   git clone https://loedex.github.io/Number-Guessing-Game/
+   git clone https://github.com/loedex/Number-Guessing-Game.git
 ```
 
 2. **Navigate into the project folder**
